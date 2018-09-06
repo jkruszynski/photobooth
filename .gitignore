@@ -7,3 +7,4 @@ photobooth/*/*/__pycache__
 photobooth.egg-info
 *.log
 *.log.*
+token.txt

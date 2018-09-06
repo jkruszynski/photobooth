@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78b4e0e0-9312-437c-a7ae-9a0d2cb0672b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/photobooth/Threading.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/Threading.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/camera/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/camera/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/defaults.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/defaults.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/Frames.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/Frames.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/Widgets.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/gui/Qt5Gui/Widgets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/worker/PictureList.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/PictureList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/worker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,36 +16,40 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="4" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cfg" value="5" />
+          <entry key="gitignore" value="1" />
           <entry key="md" value="1" />
           <entry key="py" value="42" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="7" />
           <entry key="Python" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cfg" value="276" />
+          <entry key="gitignore" value="12" />
           <entry key="py" value="3342" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="276" />
+          <entry key="PLAIN_TEXT" value="288" />
           <entry key="Python" value="3342" />
         </counts>
       </usages-collector>
@@ -61,30 +58,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/photobooth/gpio/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
-              <folding>
-                <element signature="e#823#837#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1402888915/PyQt5/QtCore/QCoreApplication.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="1050">
               <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
             </state>
           </provider>
@@ -93,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photobooth/worker/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-290">
+            <state relative-caret-position="770">
               <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="46" />
             </state>
           </provider>
@@ -111,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photobooth/StateMachine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="71" column="76" lean-forward="true" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
+            <state relative-caret-position="994">
+              <caret line="71" column="76" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -130,8 +106,8 @@
         <entry file="file://$PROJECT_DIR$/INSTALL.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="224">
-                <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+              <first_editor relative-caret-position="2072">
+                <caret line="148" selection-start-line="148" selection-end-line="148" />
               </first_editor>
               <second_editor />
             </state>
@@ -140,16 +116,32 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photobooth/printer/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/photobooth/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-94" />
+            <state relative-caret-position="606">
+              <caret line="222" column="9" selection-start-line="222" selection-start-column="6" selection-end-line="222" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oauth.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/photobooth/main.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="222" column="9" selection-start-line="222" selection-start-column="6" selection-end-line="222" selection-end-column="9" />
+            <state relative-caret-position="126">
+              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -215,6 +207,7 @@
         <option value="$PROJECT_DIR$/photobooth.cfg" />
         <option value="$PROJECT_DIR$/photobooth/token/getToken.py" />
         <option value="$PROJECT_DIR$/photobooth/main.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -229,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,54 +235,10 @@
               <item name="photobooth" type="462c0819:PsiDirectoryNode" />
               <item name="photobooth" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="camera" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="Qt5Gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="printer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="token" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="upload" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="photobooth" type="b2602c69:ProjectViewProjectNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="photobooth" type="462c0819:PsiDirectoryNode" />
-              <item name="worker" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,8 +305,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,9 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
-          <folding>
-            <element signature="e#823#837#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -478,9 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-          <folding>
-            <element signature="e#823#834#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -517,9 +462,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photobooth/gpio/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1484">
+          <caret line="109" column="33" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
+          <folding>
+            <element signature="e#823#837#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1402888915/PyQt5/QtCore/QCoreApplication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/photobooth/worker/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
+        <state relative-caret-position="770">
           <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="46" />
         </state>
       </provider>
@@ -531,9 +500,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/printer/__init__.py">
+    <entry file="file://$PROJECT_DIR$/photobooth/StateMachine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94" />
+        <state relative-caret-position="994">
+          <caret line="71" column="76" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/photobooth/__main__.py">
@@ -546,48 +517,34 @@
     <entry file="file://$PROJECT_DIR$/INSTALL.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="224">
-            <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+          <first_editor relative-caret-position="2072">
+            <caret line="148" selection-start-line="148" selection-end-line="148" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1402888915/PyQt5/QtCore/QCoreApplication.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/gpio/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
-          <folding>
-            <element signature="e#823#837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/StateMachine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="71" column="76" lean-forward="true" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/photobooth/printer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/photobooth/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
+        <state relative-caret-position="606">
           <caret line="222" column="9" selection-start-line="222" selection-start-column="6" selection-end-line="222" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oauth.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
