@@ -8,3 +8,4 @@ photobooth.egg-info
 *.log
 *.log.*
 token.txt
+.idea/*
