@@ -144,7 +144,7 @@ class Camera:
         time.sleep(3)
         self.setIdle()
 
-        newSize = (self._pic_dims.outputSize[0], self._pic_dims.outputSize[1])
+        #newSize = (self._pic_dims.outputSize[0], self._pic_dims.outputSize[1])
 
         if (self._add_background):
             picture = Image.open(self._background_location)
@@ -172,7 +172,7 @@ class Camera:
         total_height = sum(heights)
         max_width = max(widths)
 
-        new_im = Image.new('RGB', (max_width, total_height), 'red')
+        new_im = Image.new('RGB', (max_width, total_height), (255, 255, 255))
 
         y_offset = 0
         for im in images:

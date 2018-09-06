@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78b4e0e0-9312-437c-a7ae-9a0d2cb0672b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/defaults.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/defaults.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/move/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/worker/PictureList.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/PictureList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/worker/asscounter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/assembled_counter.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photobooth/worker/singlecounter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/single_counter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photobooth/camera/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/camera/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photobooth/worker/assembled_counter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/assembled_counter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photobooth/worker/single_counter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/photobooth/worker/single_counter.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +30,7 @@
           <entry key="cfg" value="7" />
           <entry key="gitignore" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="52" />
+          <entry key="py" value="53" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -41,20 +38,20 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="52" />
+          <entry key="Python" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cfg" value="277" />
           <entry key="gitignore" value="12" />
-          <entry key="py" value="3690" />
+          <entry key="py" value="3691" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="289" />
-          <entry key="Python" value="3690" />
+          <entry key="Python" value="3691" />
         </counts>
       </usages-collector>
     </session>
@@ -65,19 +62,19 @@
         <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-13">
-              <caret line="182" column="60" lean-forward="true" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
+              <caret line="182" column="60" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/photobooth/camera/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
+            <state relative-caret-position="382">
+              <caret line="174" column="77" lean-forward="true" selection-start-line="174" selection-start-column="77" selection-end-line="174" selection-end-column="77" />
               <folding>
                 <element signature="e#823#837#0" expanded="true" />
-                <marker date="1536257828314" expanded="true" signature="5549:5558" ph="..." />
+                <marker date="1536261906076" expanded="true" signature="5550:5559" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,13 +98,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/photobooth/worker/PictureList.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
               <folding>
                 <element signature="e#823#837#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/photobooth/token/getToken.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/Frames.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="473">
-              <caret line="155" column="26" lean-forward="true" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
+              <caret line="155" column="26" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -126,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/photobooth/defaults.cfg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -140,20 +149,7 @@
         <entry file="file://$PROJECT_DIR$/photobooth.cfg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
-              <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/photobooth/upload/uploadPhoto.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1536257097727" expanded="true" signature="303:304" ph="..." />
-              </folding>
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -218,12 +214,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/photobooth/upload/__init__.py" />
         <option value="$PROJECT_DIR$/photobooth/upload/uploadPhoto.py" />
-        <option value="$PROJECT_DIR$/photobooth/camera/__init__.py" />
         <option value="$PROJECT_DIR$/photobooth/camera/PictureDimensions.py" />
         <option value="$PROJECT_DIR$/photobooth.cfg" />
         <option value="$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py" />
         <option value="$PROJECT_DIR$/photobooth/gui/Qt5Gui/Frames.py" />
         <option value="$PROJECT_DIR$/photobooth/defaults.cfg" />
+        <option value="$PROJECT_DIR$/photobooth/camera/__init__.py" />
       </list>
     </option>
   </component>
@@ -429,16 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/token/getToken.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/Widgets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -550,35 +536,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/camera/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
-          <folding>
-            <element signature="e#823#837#0" expanded="true" />
-            <marker date="1536257828314" expanded="true" signature="5549:5558" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="182" column="60" lean-forward="true" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/Frames.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
-          <caret line="155" column="26" lean-forward="true" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
+          <caret line="155" column="26" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/photobooth.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="18" />
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -588,7 +556,7 @@
     <entry file="file://$PROJECT_DIR$/photobooth/defaults.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
@@ -605,9 +573,37 @@
     <entry file="file://$PROJECT_DIR$/photobooth/worker/PictureList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding>
             <element signature="e#823#837#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photobooth/token/getToken.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photobooth/gui/Qt5Gui/PyQt5Gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="182" column="60" selection-start-line="182" selection-start-column="60" selection-end-line="182" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/photobooth/camera/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="174" column="77" lean-forward="true" selection-start-line="174" selection-start-column="77" selection-end-line="174" selection-end-column="77" />
+          <folding>
+            <element signature="e#823#837#0" expanded="true" />
+            <marker date="1536261906076" expanded="true" signature="5550:5559" ph="..." />
           </folding>
         </state>
       </provider>
