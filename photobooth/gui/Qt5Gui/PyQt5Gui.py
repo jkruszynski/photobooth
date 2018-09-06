@@ -203,9 +203,8 @@ class PyQt5Gui(GuiSkeleton):
 
     def showCapture(self, state):
 
-        num_pic = (self._cfg.getInt('Picture', 'num_x'),
-                   self._cfg.getInt('Picture', 'num_y'))
-        self._setWidget(Frames.CaptureMessage(state.num_picture, *num_pic))
+        num_pics = int(self._cfg.get('Picture', 'num_pics'))
+        self._setWidget(Frames.CaptureMessage(state.num_picture, num_pics))
 
     def showAssemble(self, state):
 

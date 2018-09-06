@@ -65,9 +65,9 @@ class Welcome(QtWidgets.QFrame):
         btnLay.addWidget(btnSettings)
         btnLay.addWidget(btnQuit)
 
-        title = QtWidgets.QLabel('photobooth')
+        title = QtWidgets.QLabel("Jimmy's Photobooth")
 
-        url = 'https://github.com/reuterbal/photobooth'
+        url = 'https://github.com/jkruszynski/photobooth'
         link = QtWidgets.QLabel('<a href="{0}">{0}</a>'.format(url))
 
         lay = QtWidgets.QVBoxLayout()
@@ -137,14 +137,13 @@ class GreeterMessage(QtWidgets.QFrame):
 
 class CaptureMessage(QtWidgets.QFrame):
 
-    def __init__(self, num_picture, num_x, num_y):
+    def __init__(self, num_picture, num_pics):
 
         super().__init__()
         self.setObjectName('PoseMessage')
 
-        if num_x * num_y > 1:
-            self._text = 'Picture {} of {}...'.format(num_picture,
-                                                      num_x * num_y)
+        if num_pics > 1:
+            self._text = 'Picture {} of {}...'.format(num_picture, num_pics)
         else:
             self._text = 'Taking a photo...'
 

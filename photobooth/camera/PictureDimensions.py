@@ -48,7 +48,6 @@ class PictureDimensions:
         thumb_dist = tuple((self.outputSize[i] - self.numPictures[i] *
                             self.thumbnailSize[i]) // (self.numPictures[i] + 1)
                            for i in range(2))
-        thumb_dist = (20, 20)
         self._thumb_offsets = []
         for i in range(self.totalNumPictures):
             pos = (i % self.numPictures[0], i // self.numPictures[0])
