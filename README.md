@@ -12,6 +12,13 @@ This application is an extension of a photobooth application by [reuterbal](http
 3. Once in /prep/, an uploader thread uploads the picture to designated google photos album.
 4. Once uploaded, photo is moved to /archive/
 
+## Notes
+
+* Set assembled_counter.txt and single_counter.txt in /photobooth/worker/ to 0 (open file, change number to 0, save) if you want a fresh start
+
+
+
+--------------------------------------------------------------------------------------
 Below is original documentation from reuterbal
 
 --------------------------------------------------------------------------------------
