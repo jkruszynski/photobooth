@@ -1,3 +1,15 @@
+# Jimmy's Photobooth Modifications
+
+This application is an extension of a photobooth application by [reuterbal](https://github.com/reuterbal/photobooth/). Some of the modifications include:
+
+* Google Photos integration
+* Ability to add alternate background
+* Ability to add footer/banner (think white bar at bottom of polaroid picture for text)
+
+Below is original documentation from reuterbal
+
+--------------------------------------------------------------------------------------
+
 # photobooth
 
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/reuterbal)
