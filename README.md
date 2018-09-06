@@ -4,7 +4,7 @@ This application is an extension of a photobooth application by [reuterbal](http
 
 * Google Photos integration
 * Ability to add alternate background
-* Ability to add footer/banner (think white bar at bottom of polaroid picture for text)
+* Ability to add footer (think white bar at bottom of polaroid picture for text)
 
 ## Photo path
 1. Photo goes into /preprep/

@@ -52,8 +52,8 @@ class Camera:
 
         self._is_preview = self._cfg.getBool('Photobooth', 'show_preview')
         self._is_keep_pictures = self._cfg.getBool('Picture', 'keep_pictures')
-        self._add_banner = self._cfg.getBool('Picture','add_banner')
-        self._banner_location = config.get('Picture', 'banner_location')
+        self._add_footer = self._cfg.getBool('Picture','add_footer')
+        self._footer_location = config.get('Picture', 'footer_location')
         self._num_pics = int(config.get('Picture', 'num_pics'))
         self._add_background = self._cfg.getBool('Picture','add_background')
         self._background_location = config.get('Picture', 'background_location')
@@ -155,22 +155,22 @@ class Camera:
             resized = self._pictures[i].resize(self._pic_dims.thumbnailSize)
             picture.paste(resized, self._pic_dims.thumbnailOffset[i])
 
-        if (self._add_banner):
-            picture = self.addBanner(picture)
+        if (self._add_footer):
+            picture = self.addFooter(picture)
 
         
         self._comm.send(Workers.MASTER,
                         StateMachine.CameraEvent('review', picture))
         self._pictures = []
         
-    def addBanner(self, picture):
+    def addFooter(self, picture):
 
         try:
-            banner = Image.open(self._banner_location)
+            footer = Image.open(self._footer_location)
         except:
-            banner = Image.new('RGB', (picture.size[0], round(picture.size[0] * .1)), (255, 255, 255))
+            footer = Image.new('RGB', (picture.size[0], round(picture.size[0] * .1)), (255, 255, 255))
 
-        images = [picture, banner]
+        images = [picture, footer]
         logging.info('image 1 size ' + str(images[0].size) + '\nimage 2 size ' + str(images[1].size))
         widths, heights = zip(*(i.size for i in images))
 

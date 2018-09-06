@@ -695,12 +695,12 @@ class Settings(QtWidgets.QFrame):
         keep_pictures.setChecked(self._cfg.getBool('Picture', 'keep_pictures'))
         self.add('Picture', 'keep_pictures', keep_pictures)
 
-        add_banner = QtWidgets.QCheckBox()
-        add_banner.setChecked(self._cfg.getBool('Picture', 'add_banner'))
-        self.add('Picture', 'add_banner', add_banner)
+        add_footer = QtWidgets.QCheckBox()
+        add_footer.setChecked(self._cfg.getBool('Picture', 'add_footer'))
+        self.add('Picture', 'add_footer', add_footer)
 
-        banner_location = QtWidgets.QLineEdit(self._cfg.get('Picture', 'banner_location'))
-        self.add('Picture', 'banner_location', banner_location)
+        footer_location = QtWidgets.QLineEdit(self._cfg.get('Picture', 'footer_location'))
+        self.add('Picture', 'footer_location', footer_location)
 
         add_background = QtWidgets.QCheckBox()
         add_background.setChecked(self._cfg.getBool('Picture', 'add_background'))
@@ -733,9 +733,9 @@ class Settings(QtWidgets.QFrame):
             basedir.setText(dialog(self, 'Select directory',
                                    os.path.expanduser('~'),
                                    QtWidgets.QFileDialog.ShowDirsOnly))
-        def banner_dialog():
+        def footer_dialog():
             dialog = QtWidgets.QFileDialog.getOpenFileName()
-            banner_location.setText(dialog[0])
+            footer_location.setText(dialog[0])
 
         def background_dialog():
             dialog = QtWidgets.QFileDialog.getOpenFileName()
@@ -748,16 +748,16 @@ class Settings(QtWidgets.QFrame):
         lay_file.addWidget(basedir)
         lay_file.addWidget(file_button)
 
-        add_banner_button = QtWidgets.QPushButton('Select file')
-        add_banner_button.clicked.connect(banner_dialog)
+        add_footer_button = QtWidgets.QPushButton('Select file')
+        add_footer_button.clicked.connect(footer_dialog)
 
         add_background_button = QtWidgets.QPushButton('Select file')
         add_background_button.clicked.connect(background_dialog)
 
-        lay_banner = QtWidgets.QHBoxLayout()
-       # lay_banner.addWidget(add_banner)
-        lay_banner.addWidget(banner_location)
-        lay_banner.addWidget(add_banner_button)
+        lay_footer = QtWidgets.QHBoxLayout()
+       # lay_footer.addWidget(add_footer)
+        lay_footer.addWidget(footer_location)
+        lay_footer.addWidget(add_footer_button)
 
         lay_background = QtWidgets.QHBoxLayout()
         lay_background.addWidget(background_location)
@@ -775,8 +775,8 @@ class Settings(QtWidgets.QFrame):
                       basename)
         layout.addRow('Keep single shots:', keep_pictures)
 
-        layout.addRow('Add Banner?', add_banner)
-        layout.addRow('Banner Location:', lay_banner)
+        layout.addRow('Add footer?', add_footer)
+        layout.addRow('Footer Location:', lay_footer)
 
         layout.addRow('Add Background?', add_background)
         layout.addRow('Background Location:', lay_background)
@@ -907,10 +907,10 @@ class Settings(QtWidgets.QFrame):
                       self.get('Picture', 'basename').text())
         self._cfg.set('Picture', 'keep_pictures',
                       str(self.get('Picture', 'keep_pictures').isChecked()))
-        self._cfg.set('Picture', 'banner_location',
-                      self.get('Picture', 'banner_location').text())
-        self._cfg.set('Picture', 'add_banner',
-                      str(self.get('Picture', 'add_banner').isChecked()))
+        self._cfg.set('Picture', 'footer_location',
+                      self.get('Picture', 'footer_location').text())
+        self._cfg.set('Picture', 'add_footer',
+                      str(self.get('Picture', 'add_footer').isChecked()))
         self._cfg.set('Picture', 'background_location',
                       self.get('Picture', 'background_location').text())
         self._cfg.set('Picture', 'add_background',
