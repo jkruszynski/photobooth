@@ -55,11 +55,11 @@ class PictureList:
         pictures = glob(self.basename + count_pattern + self.suffix)
 
         if '_shot_' in self.basename:
-            with open('photobooth/worker/singlecounter.txt', 'r') as f:
+            with open('photobooth/worker/single_counter.txt', 'r') as f:
                 single_counter = f.read()
             self.counter = int(single_counter)
         else:
-            with open('photobooth/worker/asscounter.txt', 'r') as f:
+            with open('photobooth/worker/assembled_counter.txt', 'r') as f:
                 ass_counter = f.read()
             self.counter = int(ass_counter)
 
@@ -89,10 +89,10 @@ class PictureList:
         """Update counter and return the next filename"""
         self.counter += 1
         if '_shot_' in self.basename:
-            with open('photobooth/worker/singlecounter.txt', 'w') as f:
+            with open('photobooth/worker/single_counter.txt', 'w') as f:
                 f.write(str(self.counter))
         else:
-            with open('photobooth/worker/asscounter.txt', 'w') as f:
+            with open('photobooth/worker/assembled_counter.txt', 'w') as f:
                 f.write(str(self.counter))
 
         return self.getFilename(self.counter)
