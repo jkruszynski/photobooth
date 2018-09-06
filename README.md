@@ -6,6 +6,12 @@ This application is an extension of a photobooth application by [reuterbal](http
 * Ability to add alternate background
 * Ability to add footer/banner (think white bar at bottom of polaroid picture for text)
 
+## Photo path
+1. Photo goes into /preprep/
+2. After photo gets assembled, moves all singles and assembled photo into /prep/
+3. Once in /prep/, an uploader thread uploads the picture to designated google photos album.
+4. Once uploaded, photo is moved to /archive/
+
 Below is original documentation from reuterbal
 
 --------------------------------------------------------------------------------------
