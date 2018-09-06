@@ -47,9 +47,10 @@ class Upload:
             files = glob.glob('prep/*')
             if len(files) != 0:
                 for file in files:
-                    UploadPhoto(self._cfg, file)
-                    dest = file.replace('prep','archive')
-                    shutil.move(file, dest)
+                    result = UploadPhoto.run(self._cfg, file)
+                    if result:
+                        dest = file.replace('prep','archive')
+                        shutil.move(file, dest)
             time.sleep(30)
 
     def run(self):

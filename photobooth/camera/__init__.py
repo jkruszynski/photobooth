@@ -145,8 +145,8 @@ class Camera:
         self.setIdle()
 
         newSize = (self._pic_dims.outputSize[0], self._pic_dims.outputSize[1])
-        print(newSize)
-        if(self._add_background):
+
+        if (self._add_background):
             picture = Image.open(self._background_location)
         else:
             picture = Image.new('RGB', self._pic_dims.outputSize, (255, 255, 255))
