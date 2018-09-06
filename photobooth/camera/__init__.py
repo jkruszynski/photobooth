@@ -164,7 +164,12 @@ class Camera:
         self._pictures = []
         
     def addBanner(self, picture):
-        banner = Image.open(self._banner_location)
+
+        try:
+            banner = Image.open(self._banner_location)
+        except:
+            banner = Image.new('RGB', (picture.size[0], round(picture.size[0] * .1)), (255, 255, 255))
+
         images = [picture, banner]
         logging.info('image 1 size ' + str(images[0].size) + '\nimage 2 size ' + str(images[1].size))
         widths, heights = zip(*(i.size for i in images))
