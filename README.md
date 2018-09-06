@@ -12,8 +12,6 @@ Below is original documentation from reuterbal
 
 # photobooth
 
-[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/reuterbal)
-
 A flexible Photobooth software.
 
 It supports many different camera models, the appearance can be adapted to your likings, and it runs on many different hardware setups.
