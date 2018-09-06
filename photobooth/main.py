@@ -34,6 +34,8 @@ from .util import lookup_and_import
 from .StateMachine import Context, ErrorEvent
 from .Threading import Communicator, Workers
 from .worker import Worker
+from .token import Token
+from .upload import Upload
 
 
 class CameraProcess(mp.Process):
@@ -116,6 +118,43 @@ class GpioProcess(mp.Process):
             except Exception as e:
                 self._comm.send(Workers.MASTER, ErrorEvent('Gpio', str(e)))
 
+class TokenProcess(mp.Process):
+
+    def __init__(self, argv, config, comm):
+
+        super().__init__()
+        self.daemon = True
+
+        self._cfg = config
+        self._comm = comm
+
+    def run(self):
+
+        while True:
+            try:
+                if Token(self._cfg, self._comm).run():
+                    break
+            except Exception as e:
+                self._comm.send(Workers.MASTER, ErrorEvent('Token', str(e)))
+
+class UploadProcess(mp.Process):
+
+    def __init__(self, argv, config, comm):
+
+        super().__init__()
+        self.daemon = True
+
+        self._cfg = config
+        self._comm = comm
+
+    def run(self):
+
+        while True:
+            try:
+                if Upload(self._cfg, self._comm).run():
+                    break
+            except Exception as e:
+                self._comm.send(Workers.MASTER, ErrorEvent('Upload', str(e)))
 
 def run(argv):
 
@@ -133,7 +172,9 @@ def run(argv):
     # 3. GUI
     # 4. Postprocessing worker
     # 5. GPIO handler
-    proc_classes = (CameraProcess, WorkerProcess, GuiProcess, GpioProcess)
+    # 6. Getting refreshed token
+    # 7. Upload photos, and move to archive
+    proc_classes = (CameraProcess, WorkerProcess, GuiProcess, GpioProcess, TokenProcess, UploadProcess)
     procs = [P(argv, config, comm) for P in proc_classes]
 
     for proc in procs:

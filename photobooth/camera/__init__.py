@@ -24,6 +24,7 @@ from PIL import Image, ImageOps
 from .PictureDimensions import PictureDimensions
 from .. import StateMachine
 from ..Threading import Workers
+import time
 
 # Available camera modules as tuples of (config name, module name, class name)
 modules = (
@@ -51,6 +52,11 @@ class Camera:
 
         self._is_preview = self._cfg.getBool('Photobooth', 'show_preview')
         self._is_keep_pictures = self._cfg.getBool('Picture', 'keep_pictures')
+        self._add_banner = self._cfg.getBool('Picture','add_banner')
+        self._banner_location = config.get('Picture', 'banner_location')
+        self._num_pics = int(config.get('Picture', 'num_pics'))
+        self._add_background = self._cfg.getBool('Picture','add_background')
+        self._background_location = config.get('Picture', 'background_location')
 
     def startup(self):
 
@@ -126,7 +132,7 @@ class Camera:
             self._comm.send(Workers.WORKER,
                             StateMachine.CameraEvent('capture', picture))
 
-        if state.num_picture < self._pic_dims.totalNumPictures:
+        if state.num_picture < self._num_pics:
             self._comm.send(Workers.MASTER,
                             StateMachine.CameraEvent('countdown'))
         else:
@@ -134,14 +140,47 @@ class Camera:
                             StateMachine.CameraEvent('assemble'))
 
     def assemblePicture(self):
-
+        # time.sleep(3) #creating collage was corrupting 4th image. Added sleep to give more proc time
+        time.sleep(3)
         self.setIdle()
 
-        picture = Image.new('RGB', self._pic_dims.outputSize, (255, 255, 255))
-        for i in range(self._pic_dims.totalNumPictures):
+        newSize = (self._pic_dims.outputSize[0], self._pic_dims.outputSize[1])
+        print(newSize)
+        if(self._add_background):
+            picture = Image.open(self._background_location)
+        else:
+            picture = Image.new('RGB', self._pic_dims.outputSize, (255, 255, 255))
+
+        for i in range(self._num_pics):
             resized = self._pictures[i].resize(self._pic_dims.thumbnailSize)
             picture.paste(resized, self._pic_dims.thumbnailOffset[i])
 
+        if (self._add_banner):
+            picture = self.addBanner(picture)
+
+        
         self._comm.send(Workers.MASTER,
                         StateMachine.CameraEvent('review', picture))
         self._pictures = []
+        
+    def addBanner(self, picture):
+        banner = Image.open(self._banner_location)
+        images = [picture, banner]
+        logging.info('image 1 size ' + str(images[0].size) + '\nimage 2 size ' + str(images[1].size))
+        widths, heights = zip(*(i.size for i in images))
+
+        total_height = sum(heights)
+        max_width = max(widths)
+
+        new_im = Image.new('RGB', (max_width, total_height), 'red')
+
+        y_offset = 0
+        for im in images:
+          new_im.paste(im, (0,y_offset))
+          y_offset += im.size[1]
+        
+        return new_im
+        
+        
+        
+        

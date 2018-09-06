@@ -19,8 +19,10 @@
 
 import logging
 import os.path
+import glob
+import shutil
 
-from time import localtime, strftime
+from time import localtime, strftime, sleep
 
 from .PictureList import PictureList
 from .. import StateMachine
@@ -30,11 +32,9 @@ from ..Threading import Workers
 class WorkerTask:
 
     def __init__(self, **kwargs):
-
         assert not kwargs
 
     def do(self, picture):
-
         raise NotImplementedError()
 
 
@@ -51,6 +51,18 @@ class PictureSaver(WorkerTask):
         filename = self._pic_list.getNext()
         logging.info('Saving picture as %s', filename)
         picture.save(filename, 'JPEG')
+        if '_shot_' not in filename:
+            self.move_files()
+
+    def move_files(self):
+        sleep(5)
+        src = 'preprep/'
+        dest = 'prep/'
+        files = glob.glob(src + '*')
+
+        for file in files:
+            filename = file.split('preprep')[1][1:]
+            shutil.move(file, dest + filename)
 
 
 class Worker:

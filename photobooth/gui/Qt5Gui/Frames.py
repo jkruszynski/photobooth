@@ -103,15 +103,16 @@ class IdleMessage(QtWidgets.QFrame):
 
 class GreeterMessage(QtWidgets.QFrame):
 
-    def __init__(self, num_x, num_y, countdown_action):
+    def __init__(self, num_x, num_y, num_pics, countdown_action):
+
 
         super().__init__()
         self.setObjectName('GreeterMessage')
-
         self._text_title = 'Get ready!'
         self._text_button = 'Start countdown'
+
         if num_x * num_y > 1:
-            self._text_label = ('for {} pictures...'.format(num_x * num_y))
+            self._text_label = ('for {} pictures...'.format(num_pics))
         else:
             self._text_label = ''
 
@@ -473,6 +474,7 @@ class Settings(QtWidgets.QFrame):
         tabs.addTab(self.createPictureSettings(), 'Picture')
         tabs.addTab(self.createGpioSettings(), 'GPIO')
         tabs.addTab(self.createPrinterSettings(), 'Printer')
+        tabs.addTab(self.createGoogleOAuthSettings(), 'OAuth')
         return tabs
 
     def createButtons(self):
@@ -597,6 +599,39 @@ class Settings(QtWidgets.QFrame):
         widget.setLayout(layout)
         return widget
 
+    def createGoogleOAuthSettings(self):
+
+        self.init('OAuth')
+
+        use_oauth = QtWidgets.QCheckBox()
+        use_oauth.setChecked(self._cfg.getBool('OAuth', 'use_oauth'))
+        self.add('OAuth', 'use_oauth', use_oauth)
+
+        redirect_uri = QtWidgets.QLineEdit(self._cfg.get('OAuth', 'redirect_uri'))
+        client_id = QtWidgets.QLineEdit(self._cfg.get('OAuth', 'client_id'))
+        client_secret = QtWidgets.QLineEdit(self._cfg.get('OAuth', 'client_secret'))
+        refresh_token = QtWidgets.QLineEdit(self._cfg.get('OAuth', 'refresh_token'))
+        album_id = QtWidgets.QLineEdit(self._cfg.get('OAuth', 'album_id'))
+
+        self.add('OAuth', 'redirect_uri', redirect_uri)
+        self.add('OAuth', 'client_id', client_id)
+        self.add('OAuth', 'client_secret', client_secret)
+        self.add('OAuth', 'refresh_token', refresh_token)
+        self.add('OAuth', 'album_id', album_id)
+
+        layout = QtWidgets.QFormLayout()
+        layout.addRow('Use Google OAuth for Uploading:', use_oauth)
+        layout.addRow('Redirect URI', redirect_uri)
+        layout.addRow('Client ID:', client_id)
+        layout.addRow('Client Secret:', client_secret)
+        layout.addRow('Refresh Token:', refresh_token)
+        layout.addRow('Album ID', album_id)
+
+        widget = QtWidgets.QWidget()
+        widget.setLayout(layout)
+        return widget
+
+
     def createCameraSettings(self):
 
         self.init('Camera')
@@ -615,6 +650,12 @@ class Settings(QtWidgets.QFrame):
     def createPictureSettings(self):
 
         self.init('Picture')
+
+        num_pics = QtWidgets.QSpinBox()
+        num_pics.setRange(1, 99)
+        num_pics.setValue(self._cfg.getInt('Picture', 'num_pics'))
+        self.add('Picture', 'num_pics', num_pics)
+
 
         num_x = QtWidgets.QSpinBox()
         num_x.setRange(1, 99)
@@ -655,6 +696,24 @@ class Settings(QtWidgets.QFrame):
         keep_pictures.setChecked(self._cfg.getBool('Picture', 'keep_pictures'))
         self.add('Picture', 'keep_pictures', keep_pictures)
 
+        add_banner = QtWidgets.QCheckBox()
+        add_banner.setChecked(self._cfg.getBool('Picture', 'add_banner'))
+        self.add('Picture', 'add_banner', add_banner)
+
+        banner_location = QtWidgets.QLineEdit(self._cfg.get('Picture', 'banner_location'))
+        self.add('Picture', 'banner_location', banner_location)
+
+        add_background = QtWidgets.QCheckBox()
+        add_background.setChecked(self._cfg.getBool('Picture', 'add_background'))
+        self.add('Picture', 'add_background', add_background)
+
+        background_location = QtWidgets.QLineEdit(self._cfg.get('Picture', 'background_location'))
+        self.add('Picture', 'background_location', background_location)
+
+        lay_num_pics = QtWidgets.QHBoxLayout()
+        lay_num_pics.addWidget(num_pics)
+
+
         lay_num = QtWidgets.QHBoxLayout()
         lay_num.addWidget(num_x)
         lay_num.addWidget(QtWidgets.QLabel('x'))
@@ -671,10 +730,17 @@ class Settings(QtWidgets.QFrame):
         lay_dist.addWidget(min_dist_y)
 
         def file_dialog():
-            dialog = QtWidgets.QFileDialog.getExistingDirectory
+            dialog = QtWidgets.QFileDialog.getExistingDirectory()
             basedir.setText(dialog(self, 'Select directory',
                                    os.path.expanduser('~'),
                                    QtWidgets.QFileDialog.ShowDirsOnly))
+        def banner_dialog():
+            dialog = QtWidgets.QFileDialog.getOpenFileName()
+            banner_location.setText(dialog[0])
+
+        def background_dialog():
+            dialog = QtWidgets.QFileDialog.getOpenFileName()
+            background_location.setText(dialog[0])
 
         file_button = QtWidgets.QPushButton('Select directory')
         file_button.clicked.connect(file_dialog)
@@ -683,7 +749,23 @@ class Settings(QtWidgets.QFrame):
         lay_file.addWidget(basedir)
         lay_file.addWidget(file_button)
 
+        add_banner_button = QtWidgets.QPushButton('Select file')
+        add_banner_button.clicked.connect(banner_dialog)
+
+        add_background_button = QtWidgets.QPushButton('Select file')
+        add_background_button.clicked.connect(background_dialog)
+
+        lay_banner = QtWidgets.QHBoxLayout()
+       # lay_banner.addWidget(add_banner)
+        lay_banner.addWidget(banner_location)
+        lay_banner.addWidget(add_banner_button)
+
+        lay_background = QtWidgets.QHBoxLayout()
+        lay_background.addWidget(background_location)
+        lay_background.addWidget(add_background_button)
+
         layout = QtWidgets.QFormLayout()
+        layout.addRow('Number of pictures taken:', lay_num_pics)
         layout.addRow('Number of shots per picture:', lay_num)
         layout.addRow('Size of assembled picture [px]:', lay_size)
         layout.addRow('Min. distance between shots [px]:',
@@ -693,6 +775,12 @@ class Settings(QtWidgets.QFrame):
         layout.addRow('Basename of files (strftime possible):',
                       basename)
         layout.addRow('Keep single shots:', keep_pictures)
+
+        layout.addRow('Add Banner?', add_banner)
+        layout.addRow('Banner Location:', lay_banner)
+
+        layout.addRow('Add Background?', add_background)
+        layout.addRow('Background Location:', lay_background)
 
         widget = QtWidgets.QWidget()
         widget.setLayout(layout)
@@ -803,7 +891,7 @@ class Settings(QtWidgets.QFrame):
         self._cfg.set('Camera', 'module',
                       camera.modules[self.get('Camera',
                                               'module').currentIndex()][0])
-
+        self._cfg.set('Picture', 'num_pics', self.get('Picture', 'num_pics').text())
         self._cfg.set('Picture', 'num_x', self.get('Picture', 'num_x').text())
         self._cfg.set('Picture', 'num_y', self.get('Picture', 'num_y').text())
         self._cfg.set('Picture', 'size_x',
@@ -820,6 +908,14 @@ class Settings(QtWidgets.QFrame):
                       self.get('Picture', 'basename').text())
         self._cfg.set('Picture', 'keep_pictures',
                       str(self.get('Picture', 'keep_pictures').isChecked()))
+        self._cfg.set('Picture', 'banner_location',
+                      self.get('Picture', 'banner_location').text())
+        self._cfg.set('Picture', 'add_banner',
+                      str(self.get('Picture', 'add_banner').isChecked()))
+        self._cfg.set('Picture', 'background_location',
+                      self.get('Picture', 'background_location').text())
+        self._cfg.set('Picture', 'add_background',
+                      str(self.get('Picture', 'add_background').isChecked()))
 
         self._cfg.set('Gpio', 'enable',
                       str(self.get('Gpio', 'enable').isChecked()))
@@ -840,6 +936,19 @@ class Settings(QtWidgets.QFrame):
         self._cfg.set('Printer', 'width', self.get('Printer', 'width').text())
         self._cfg.set('Printer', 'height',
                       self.get('Printer', 'height').text())
+
+        self._cfg.set('OAuth', 'use_oauth',
+                      str(self.get('OAuth', 'use_oauth').isChecked()))
+        self._cfg.set('OAuth', 'redirect_uri',
+                      self.get('OAuth', 'redirect_uri').text())
+        self._cfg.set('OAuth', 'client_id',
+                      self.get('OAuth', 'client_id').text())
+        self._cfg.set('OAuth', 'client_secret',
+                      self.get('OAuth', 'client_secret').text())
+        self._cfg.set('OAuth', 'refresh_token',
+                      self.get('OAuth', 'refresh_token').text())
+        self._cfg.set('OAuth', 'album_id',
+                      self.get('OAuth', 'album_id').text())
 
         self._cfg.write()
         self._restartAction()

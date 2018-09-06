@@ -180,9 +180,10 @@ class PyQt5Gui(GuiSkeleton):
         num_pic = (self._cfg.getInt('Picture', 'num_x'),
                    self._cfg.getInt('Picture', 'num_y'))
         greeter_time = self._cfg.getInt('Photobooth', 'greeter_time') * 1000
+        num_pics = int(self._cfg.get('Picture', 'num_pics'))
 
         self._setWidget(Frames.GreeterMessage(
-            *num_pic,
+            *num_pic, num_pics,
             lambda: self._comm.send(Workers.MASTER, GuiEvent('countdown'))))
         QtCore.QTimer.singleShot(
             greeter_time,

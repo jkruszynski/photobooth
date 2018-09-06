@@ -83,8 +83,8 @@ class SpinningWaitClock(QtWidgets.QWidget):
 class RoundProgressBar(QtWidgets.QWidget):
     # Adaptation of QRoundProgressBar from
     # https://sourceforge.net/projects/qroundprogressbar/
-    # to PyQt5, using the PyQt4-version offered at
-    # https://stackoverflow.com/a/33583019
+    #     # to PyQt5, using the PyQt4-version offered at
+    #     # https://stackoverflow.com/a/33583019
 
     def __init__(self, begin, end, value):
 

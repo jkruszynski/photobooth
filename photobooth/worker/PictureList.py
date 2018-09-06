@@ -54,14 +54,23 @@ class PictureList:
         count_pattern = '[0-9]' * self.count_width
         pictures = glob(self.basename + count_pattern + self.suffix)
 
-        # Get number of latest file
-        if len(pictures) == 0:
-            self.counter = 0
+        if '_shot_' in self.basename:
+            with open('photobooth/worker/singlecounter.txt', 'r') as f:
+                single_counter = f.read()
+            self.counter = int(single_counter)
         else:
-            pictures.sort()
-            last_picture = pictures[-1]
-            self.counter = int(last_picture[
-                -(self.count_width+len(self.suffix)):-len(self.suffix)])
+            with open('photobooth/worker/asscounter.txt', 'r') as f:
+                ass_counter = f.read()
+            self.counter = int(ass_counter)
+
+        # Get number of latest file
+        #        if len(pictures) == 0:
+        #           self.counter = 0
+        #      else:
+        #         pictures.sort()
+        #        last_picture = pictures[-1]
+        #       self.counter = int(last_picture[
+        #          -(self.count_width+len(self.suffix)):-len(self.suffix)])
 
         # Print initial infos
         logging.info('Number of last existing file: %d', self.counter)
@@ -79,4 +88,11 @@ class PictureList:
     def getNext(self):
         """Update counter and return the next filename"""
         self.counter += 1
+        if '_shot_' in self.basename:
+            with open('photobooth/worker/singlecounter.txt', 'w') as f:
+                f.write(str(self.counter))
+        else:
+            with open('photobooth/worker/asscounter.txt', 'w') as f:
+                f.write(str(self.counter))
+
         return self.getFilename(self.counter)

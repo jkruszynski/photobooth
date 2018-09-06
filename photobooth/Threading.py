@@ -70,3 +70,5 @@ class Workers(IntEnum):
     CAMERA = 2
     GPIO = 3
     WORKER = 4
+    TOKEN = 5
+    UPLOAD = 6
